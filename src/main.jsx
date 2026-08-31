@@ -4,95 +4,40 @@ import "./styles.css";
 
 /* ============================================================
    SHREE MANGAL MURTI TRADERS
-   V3 - ADVANCED BUSINESS / LEAD GENERATION WEBSITE
+   ADVANCED PRODUCTION-READY BUSINESS WEBSITE
    ============================================================ */
 
 /* ============================================================
-   BUSINESS CONFIGURATION
+   BUSINESS CONFIG
    ============================================================ */
 
-const BUSINESS_NAME = "Shree Mangal Murti Traders";
+const BUSINESS = {
+  name: "Shree Mangal Murti Traders",
+  hindiName: "श्री मंगल मूर्ती ट्रेडर्स",
 
-const WHATSAPP_NUMBER = "919699214019";
-const BUSINESS_PHONE = "+919699214019";
+  phone: "+919699214019",
+  whatsapp: "919699214019",
 
-const BUSINESS_EMAIL = "info@shreemangalmurti.com";
+  email: "info@shreemangalmurti.com",
 
-const BUSINESS_ADDRESS =
-  "Bhosari Nigdi Telco Road, MIDC Gawalimatha Chowk, Anukul Chowk, Pune - 411026";
+  address:
+    "Bhosari Nigdi Telco Road, MIDC Gawalimatha Chowk, Anukul Chowk, Pune - 411026",
 
-const GOOGLE_MAPS_EMBED = "your-google-maps-embed-url";
+  city: "Pune",
+  state: "Maharashtra",
+  postalCode: "411026",
+  country: "IN",
 
-const GOOGLE_MAPS_SEARCH_URL =
-  "https://www.google.com/maps/search/?api=1&query=" +
-  encodeURIComponent(BUSINESS_ADDRESS);
+  mapsSearch:
+    "https://www.google.com/maps/search/?api=1&query=",
 
-const GOOGLE_REVIEW_URL = GOOGLE_MAPS_SEARCH_URL;
-
-/* Replace these with your real social links */
-const SOCIAL_LINKS = {
-  whatsapp: `https://wa.me/${WHATSAPP_NUMBER}`,
-  facebook: "https://facebook.com/",
-  instagram: "https://instagram.com/",
-  linkedin: "https://linkedin.com/",
+  social: {
+    whatsapp: "https://wa.me/919699214019",
+    facebook: "https://facebook.com/",
+    instagram: "https://instagram.com/",
+    linkedin: "https://linkedin.com/",
+  },
 };
-
-/*
-  REAL GALLERY:
-  Replace these URLs with your actual business/project images.
-
-  Recommended:
-  /gallery/shop.jpg
-  /gallery/warehouse.jpg
-  /gallery/materials.jpg
-  /gallery/delivery.jpg
-
-  The fallback emoji will still display if an image is unavailable.
-*/
-const galleryImages = [
-  {
-    id: 1,
-    src: "/gallery/shop.jpg",
-    emoji: "🏪",
-    title: "Our Business",
-    alt: "Shree Mangal Murti Traders",
-  },
-  {
-    id: 2,
-    src: "/gallery/warehouse.jpg",
-    emoji: "🏭",
-    title: "Material Warehouse",
-    alt: "Building material warehouse",
-  },
-  {
-    id: 3,
-    src: "/gallery/materials.jpg",
-    emoji: "🧱",
-    title: "Building Materials",
-    alt: "Construction materials",
-  },
-  {
-    id: 4,
-    src: "/gallery/steel.jpg",
-    emoji: "🔩",
-    title: "Steel Materials",
-    alt: "TMT steel materials",
-  },
-  {
-    id: 5,
-    src: "/gallery/plywood.jpg",
-    emoji: "🪵",
-    title: "Plywood Section",
-    alt: "Plywood materials",
-  },
-  {
-    id: 6,
-    src: "/gallery/delivery.jpg",
-    emoji: "🚚",
-    title: "Delivery",
-    alt: "Construction material delivery",
-  },
-];
 
 /* ============================================================
    PRODUCTS
@@ -103,100 +48,126 @@ const products = [
     id: 1,
     icon: "🧱",
     title: "Cement",
-    desc: "Premium quality cement for strong foundations and durable construction.",
+    desc:
+      "Quality cement for foundations, RCC work, masonry and general construction.",
     category: "Cement",
     availability: "In Stock",
     brands: ["UltraTech", "ACC", "Ambuja"],
     unit: "Bag",
-    keywords: "cement construction concrete foundation",
+    keywords:
+      "cement construction concrete foundation rcc masonry",
   },
+
   {
     id: 2,
     icon: "🔩",
     title: "TMT Steel",
-    desc: "High-strength TMT bars and steel sections for reinforced concrete.",
+    desc:
+      "TMT bars and steel materials for reinforced concrete and structural requirements.",
     category: "Steel",
     availability: "In Stock",
     brands: ["Tata Tiscon", "JSW", "Jindal"],
     unit: "Ton",
-    keywords: "steel tmt rod sariya bars",
+    keywords:
+      "steel tmt rod sariya bars reinforcement construction",
   },
+
   {
     id: 3,
     icon: "🪵",
     title: "Plywood",
-    desc: "Premium plywood, boards and hardware for interior and exterior work.",
+    desc:
+      "Plywood, boards and related materials for interior and construction work.",
     category: "Hardware",
     availability: "In Stock",
     brands: ["CenturyPly", "Greenply", "Archidply"],
     unit: "Sheet",
-    keywords: "plywood board wood interior",
+    keywords:
+      "plywood board wood interior furniture",
   },
+
   {
     id: 4,
     icon: "🚿",
     title: "Sanitaryware",
-    desc: "Modern bathroom fittings, sanitaryware and plumbing essentials.",
+    desc:
+      "Bathroom sanitaryware, fittings and plumbing-related products.",
     category: "Sanitary",
     availability: "In Stock",
     brands: ["Jaquar", "Hindware", "Kohler"],
     unit: "Piece",
-    keywords: "bathroom sanitary toilet basin",
+    keywords:
+      "bathroom sanitary toilet basin wash basin fittings",
   },
+
   {
     id: 5,
     icon: "⚡",
     title: "Electrical",
-    desc: "Quality electrical accessories, wires, switches and lighting solutions.",
+    desc:
+      "Electrical accessories, wires, switches and lighting-related materials.",
     category: "Electrical",
     availability: "Limited Stock",
     brands: ["Anchor", "Havells", "Polycab"],
     unit: "Piece",
-    keywords: "electrical wire switch lighting",
+    keywords:
+      "electrical wire switch socket lighting cable",
   },
+
   {
     id: 6,
     icon: "🏗️",
     title: "Construction Aggregates",
-    desc: "Sand, aggregate, bricks and other essential construction materials.",
+    desc:
+      "Sand, aggregate, bricks and other essential construction materials.",
     category: "Aggregates",
     availability: "In Stock",
     brands: ["Local Suppliers", "Quarry Materials"],
     unit: "Ton",
-    keywords: "sand aggregate bricks construction",
+    keywords:
+      "sand aggregate bricks stone construction",
   },
+
   {
     id: 7,
     icon: "🎨",
     title: "Paint & Finishing",
-    desc: "Quality paints, primers and finishing materials for your project.",
+    desc:
+      "Paints, primers and finishing materials for residential and commercial projects.",
     category: "Paint",
     availability: "In Stock",
     brands: ["Asian Paints", "Berger", "Nerolac"],
     unit: "Litre",
-    keywords: "paint primer wall colour finishing",
+    keywords:
+      "paint primer wall colour finishing coating",
   },
+
   {
     id: 8,
     icon: "💧",
     title: "Plumbing Pipes",
-    desc: "CPVC, PVC and GI pipes along with fittings for plumbing systems.",
+    desc:
+      "CPVC, PVC and GI pipes with plumbing fittings.",
     category: "Plumbing",
     availability: "In Stock",
     brands: ["Astral", "Finolex", "Supreme"],
     unit: "Piece",
-    keywords: "pipe pvc cpvc plumbing fittings",
+    keywords:
+      "pipe pvc cpvc plumbing fittings water",
   },
+
   {
     id: 9,
     icon: "🪟",
     title: "Glass & Hardware",
-    desc: "Glass sheets, aluminum sections and door/window hardware.",
+    desc:
+      "Glass, aluminium sections and door/window hardware.",
     category: "Hardware",
     availability: "Contact for Availability",
     brands: ["Saint-Gobain", "Alco", "Jindal"],
     unit: "Piece",
-    keywords: "glass aluminium door window hardware",
+    keywords:
+      "glass aluminium door window hardware",
   },
 ];
 
@@ -244,23 +215,32 @@ const deliveryAreas = [
 const faqs = [
   {
     q: "What materials do you supply?",
-    a: "We supply cement, TMT steel, plywood, sanitaryware, electrical materials, aggregates, paints, plumbing pipes and hardware.",
+    a:
+      "We supply cement, TMT steel, plywood, sanitaryware, electrical materials, aggregates, paints, plumbing pipes and hardware.",
   },
+
   {
     q: "Do you provide bulk material quotations?",
-    a: "Yes. You can add multiple products to the Bulk Quote Builder and send the complete requirement through WhatsApp.",
+    a:
+      "Yes. You can add multiple products to the Bulk Quote Builder and send the requirement through WhatsApp.",
   },
+
   {
-    q: "Do you deliver construction materials?",
-    a: "Delivery availability depends on location, material and order quantity. Contact us with your project location for confirmation.",
+    q: "Do you provide delivery?",
+    a:
+      "Delivery availability depends on material, quantity and project location. Contact us for confirmation.",
   },
+
   {
-    q: "How can I get the best price?",
-    a: "Use the Get Best Price option and share your material, quantity and delivery location. We can then review your requirement.",
+    q: "How can I request the best price?",
+    a:
+      "Share the material, quantity and delivery location through the quotation form or WhatsApp.",
   },
+
   {
-    q: "Can I enquire about multiple products together?",
-    a: "Yes. Use Request Bulk Quote to add multiple products and quantities before sending the enquiry.",
+    q: "Can I enquire about multiple products?",
+    a:
+      "Yes. Add multiple products to the Bulk Quote Builder and submit one combined enquiry.",
   },
 ];
 
@@ -283,7 +263,6 @@ const translations = {
     bulkQuote: "Request Bulk Quote",
     search: "Search materials...",
     all: "All",
-    categories: "Categories",
     whatsapp: "Chat on WhatsApp",
     call: "Call Now",
     directions: "Get Directions",
@@ -303,7 +282,6 @@ const translations = {
     bulkQuote: "बल्क कोट मांगें",
     search: "सामग्री खोजें...",
     all: "सभी",
-    categories: "श्रेणियाँ",
     whatsapp: "व्हाट्सऐप पर बात करें",
     call: "कॉल करें",
     directions: "दिशा देखें",
@@ -323,7 +301,6 @@ const translations = {
     bulkQuote: "बल्क कोट मागवा",
     search: "साहित्य शोधा...",
     all: "सर्व",
-    categories: "वर्ग",
     whatsapp: "व्हॉट्सॲपवर बोला",
     call: "कॉल करा",
     directions: "मार्ग मिळवा",
@@ -331,50 +308,176 @@ const translations = {
 };
 
 /* ============================================================
-   TRACKING HELPERS
+   GALLERY
+   ============================================================ */
+
+const galleryImages = [
+  {
+    id: 1,
+    src: "/gallery/shop.jpg",
+    emoji: "🏪",
+    title: "Our Business",
+    alt: "Shree Mangal Murti Traders",
+  },
+
+  {
+    id: 2,
+    src: "/gallery/warehouse.jpg",
+    emoji: "🏭",
+    title: "Material Warehouse",
+    alt: "Building material warehouse",
+  },
+
+  {
+    id: 3,
+    src: "/gallery/materials.jpg",
+    emoji: "🧱",
+    title: "Building Materials",
+    alt: "Construction materials",
+  },
+
+  {
+    id: 4,
+    src: "/gallery/steel.jpg",
+    emoji: "🔩",
+    title: "Steel Materials",
+    alt: "TMT steel materials",
+  },
+
+  {
+    id: 5,
+    src: "/gallery/plywood.jpg",
+    emoji: "🪵",
+    title: "Plywood Section",
+    alt: "Plywood materials",
+  },
+
+  {
+    id: 6,
+    src: "/gallery/delivery.jpg",
+    emoji: "🚚",
+    title: "Delivery",
+    alt: "Construction material delivery",
+  },
+];
+
+/* ============================================================
+   SAFE STORAGE
+   ============================================================ */
+
+function storageGet(key, fallback = null) {
+  try {
+    const value = localStorage.getItem(key);
+
+    if (value === null) {
+      return fallback;
+    }
+
+    return value;
+  } catch {
+    return fallback;
+  }
+}
+
+function storageSet(key, value) {
+  try {
+    localStorage.setItem(key, value);
+  } catch {
+    // Storage may be unavailable.
+  }
+}
+
+function storageGetJSON(key, fallback = []) {
+  try {
+    const value = localStorage.getItem(key);
+
+    if (!value) {
+      return fallback;
+    }
+
+    const parsed = JSON.parse(value);
+
+    return parsed;
+  } catch {
+    return fallback;
+  }
+}
+
+/* ============================================================
+   TRACKING
    ============================================================ */
 
 function getTrackingData() {
-  const params = new URLSearchParams(window.location.search);
+  const params = new URLSearchParams(
+    window.location.search
+  );
 
-  const current = {
-    utm_source: params.get("utm_source") || "",
-    utm_medium: params.get("utm_medium") || "",
-    utm_campaign: params.get("utm_campaign") || "",
-    utm_term: params.get("utm_term") || "",
-    utm_content: params.get("utm_content") || "",
-    referral: params.get("ref") || params.get("referral") || "",
-    landingPage: window.location.pathname,
-    firstSeen: new Date().toISOString(),
+  const existing = storageGetJSON(
+    "smm_tracking",
+    {}
+  );
+
+  const data = {
+    ...existing,
+
+    utm_source:
+      params.get("utm_source") ||
+      existing.utm_source ||
+      "",
+
+    utm_medium:
+      params.get("utm_medium") ||
+      existing.utm_medium ||
+      "",
+
+    utm_campaign:
+      params.get("utm_campaign") ||
+      existing.utm_campaign ||
+      "",
+
+    utm_term:
+      params.get("utm_term") ||
+      existing.utm_term ||
+      "",
+
+    utm_content:
+      params.get("utm_content") ||
+      existing.utm_content ||
+      "",
+
+    referral:
+      params.get("ref") ||
+      params.get("referral") ||
+      existing.referral ||
+      "",
+
+    landingPage:
+      existing.landingPage ||
+      window.location.pathname,
+
+    firstSeen:
+      existing.firstSeen ||
+      new Date().toISOString(),
   };
 
-  const old = localStorage.getItem("smm_tracking");
-
-  if (old) {
-    try {
-      return {
-        ...JSON.parse(old),
-        ...Object.fromEntries(
-          Object.entries(current).filter(([, value]) => value)
-        ),
-      };
-    } catch {
-      return current;
-    }
-  }
-
-  return current;
+  return data;
 }
 
 function saveTrackingData() {
   const data = getTrackingData();
-  localStorage.setItem("smm_tracking", JSON.stringify(data));
+
+  storageSet(
+    "smm_tracking",
+    JSON.stringify(data)
+  );
+
   return data;
 }
 
 function trackEvent(eventName, details = {}) {
-  const events = JSON.parse(
-    localStorage.getItem("smm_events") || "[]"
+  const events = storageGetJSON(
+    "smm_events",
+    []
   );
 
   events.push({
@@ -384,9 +487,9 @@ function trackEvent(eventName, details = {}) {
     timestamp: new Date().toISOString(),
   });
 
-  localStorage.setItem(
+  storageSet(
     "smm_events",
-    JSON.stringify(events.slice(-100))
+    JSON.stringify(events.slice(-200))
   );
 }
 
@@ -394,128 +497,252 @@ function trackEvent(eventName, details = {}) {
    SEO
    ============================================================ */
 
-function setupSEO() {
-  document.title =
-    "Shree Mangal Murti Traders | Building Materials Supplier in Pune";
+function setMeta(name, content, property = false) {
+  const attribute = property
+    ? "property"
+    : "name";
 
-  const description =
-    "Shree Mangal Murti Traders supplies cement, TMT steel, plywood, sanitaryware, electrical, plumbing, paints and construction materials in Pune.";
-
-  const keywords =
-    "building material supplier Pune, cement supplier Pune, TMT steel Pune, construction material Bhosari, building materials PCMC";
-
-  const setMeta = (name, content, property = false) => {
-    const attribute = property ? "property" : "name";
-
-    let element = document.head.querySelector(
+  let element =
+    document.head.querySelector(
       `meta[${attribute}="${name}"]`
     );
 
-    if (!element) {
-      element = document.createElement("meta");
-      element.setAttribute(attribute, name);
-      document.head.appendChild(element);
-    }
+  if (!element) {
+    element =
+      document.createElement("meta");
 
-    element.setAttribute("content", content);
-  };
+    element.setAttribute(
+      attribute,
+      name
+    );
 
-  setMeta("description", description);
-  setMeta("keywords", keywords);
-  setMeta("robots", "index, follow");
-  setMeta("theme-color", "#f97316");
-
-  setMeta("og:title", document.title, true);
-  setMeta("og:description", description, true);
-  setMeta("og:type", "website", true);
-  setMeta("og:url", window.location.href, true);
-
-  setMeta("twitter:card", "summary_large_image");
-  setMeta("twitter:title", document.title);
-  setMeta("twitter:description", description);
-
-  let canonical = document.head.querySelector(
-    'link[rel="canonical"]'
-  );
-
-  if (!canonical) {
-    canonical = document.createElement("link");
-    canonical.rel = "canonical";
-    document.head.appendChild(canonical);
+    document.head.appendChild(element);
   }
 
-  canonical.href = window.location.origin + "/";
+  element.setAttribute(
+    "content",
+    content
+  );
+}
+
+function setupSEO() {
+  const title =
+    "Shree Mangal Murti Traders | Building Materials Supplier in Pune";
+
+  const description =
+    "Shree Mangal Murti Traders supplies building and construction materials including cement, TMT steel, plywood, sanitaryware, electrical, plumbing, paints and hardware in Pune and surrounding areas.";
+
+  document.title = title;
+
+  setMeta(
+    "description",
+    description
+  );
+
+  setMeta(
+    "robots",
+    "index, follow"
+  );
+
+  setMeta(
+    "theme-color",
+    "#f97316"
+  );
+
+  setMeta(
+    "og:title",
+    title,
+    true
+  );
+
+  setMeta(
+    "og:description",
+    description,
+    true
+  );
+
+  setMeta(
+    "og:type",
+    "website",
+    true
+  );
+
+  setMeta(
+    "og:url",
+    window.location.href,
+    true
+  );
+
+  setMeta(
+    "twitter:card",
+    "summary_large_image"
+  );
+
+  setMeta(
+    "twitter:title",
+    title
+  );
+
+  setMeta(
+    "twitter:description",
+    description
+  );
+
+  let canonical =
+    document.head.querySelector(
+      'link[rel="canonical"]'
+    );
+
+  if (!canonical) {
+    canonical =
+      document.createElement("link");
+
+    canonical.rel = "canonical";
+
+    document.head.appendChild(
+      canonical
+    );
+  }
+
+  canonical.href =
+    window.location.origin + "/";
 }
 
 /* ============================================================
-   JSON-LD
+   STRUCTURED DATA
    ============================================================ */
 
 function setupStructuredData() {
-  const existing = document.getElementById(
-    "business-structured-data"
-  );
+  const old =
+    document.getElementById(
+      "business-structured-data"
+    );
 
-  if (existing) existing.remove();
+  if (old) {
+    old.remove();
+  }
 
   const businessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: BUSINESS_NAME,
+
+    name: BUSINESS.name,
+
     description:
       "Building material supplier serving Pune and surrounding areas.",
+
     url: window.location.origin,
-    telephone: BUSINESS_PHONE,
-    email: BUSINESS_EMAIL,
+
+    telephone: BUSINESS.phone,
+
+    email: BUSINESS.email,
+
     address: {
       "@type": "PostalAddress",
-      streetAddress: BUSINESS_ADDRESS,
-      addressLocality: "Pune",
-      addressRegion: "Maharashtra",
-      postalCode: "411026",
-      addressCountry: "IN",
+      streetAddress: BUSINESS.address,
+      addressLocality: BUSINESS.city,
+      addressRegion: BUSINESS.state,
+      postalCode: BUSINESS.postalCode,
+      addressCountry: BUSINESS.country,
     },
-    areaServed: [
-      "Pune",
-      "PCMC",
-      "Bhosari",
-      "Nigdi",
-      "Pimpri",
-      "Chinchwad",
-      "Moshi",
-      "Chakan",
-    ],
-    priceRange: "$$",
+
+    areaServed: deliveryAreas,
+
     sameAs: [
-      SOCIAL_LINKS.facebook,
-      SOCIAL_LINKS.instagram,
-      SOCIAL_LINKS.linkedin,
+      BUSINESS.social.facebook,
+      BUSINESS.social.instagram,
+      BUSINESS.social.linkedin,
     ],
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.q,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.a,
-      },
-    })),
+
+    mainEntity: faqs.map(
+      (faq) => ({
+        "@type": "Question",
+
+        name: faq.q,
+
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.a,
+        },
+      })
+    ),
   };
 
-  const script = document.createElement("script");
-  script.id = "business-structured-data";
-  script.type = "application/ld+json";
+  const script =
+    document.createElement(
+      "script"
+    );
 
-  script.textContent = JSON.stringify([
-    businessSchema,
-    faqSchema,
-  ]);
+  script.id =
+    "business-structured-data";
 
-  document.head.appendChild(script);
+  script.type =
+    "application/ld+json";
+
+  script.textContent =
+    JSON.stringify([
+      businessSchema,
+      faqSchema,
+    ]);
+
+  document.head.appendChild(
+    script
+  );
+}
+
+/* ============================================================
+   HELPERS
+   ============================================================ */
+
+function getMapsURL() {
+  return (
+    BUSINESS.mapsSearch +
+    encodeURIComponent(
+      BUSINESS.address
+    )
+  );
+}
+
+function isValidIndianPhone(phone) {
+  const cleaned =
+    phone.replace(/\D/g, "");
+
+  return (
+    /^[6-9]\d{9}$/.test(
+      cleaned
+    ) ||
+    /^91[6-9]\d{9}$/.test(
+      cleaned
+    )
+  );
+}
+
+function cleanPhone(phone) {
+  const digits =
+    phone.replace(/\D/g, "");
+
+  if (
+    digits.startsWith("91") &&
+    digits.length === 12
+  ) {
+    return digits.slice(2);
+  }
+
+  return digits;
+}
+
+function createWhatsAppURL(message) {
+  return (
+    `https://wa.me/${BUSINESS.whatsapp}` +
+    `?text=${encodeURIComponent(
+      message
+    )}`
+  );
 }
 
 /* ============================================================
@@ -523,48 +750,111 @@ function setupStructuredData() {
    ============================================================ */
 
 function App() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(
-    localStorage.getItem("smm_dark") === "true"
+  const [menuOpen, setMenuOpen] =
+    useState(false);
+
+  const [darkMode, setDarkMode] =
+    useState(
+      storageGet(
+        "smm_dark",
+        "false"
+      ) === "true"
+    );
+
+  const [language, setLanguage] =
+    useState(
+      storageGet(
+        "smm_language",
+        "en"
+      )
+    );
+
+  const [searchTerm, setSearchTerm] =
+    useState("");
+
+  const [
+    selectedCategory,
+    setSelectedCategory,
+  ] = useState("All");
+
+  const [
+    selectedProduct,
+    setSelectedProduct,
+  ] = useState(null);
+
+  const [
+    productModal,
+    setProductModal,
+  ] = useState(false);
+
+  const [
+    galleryImage,
+    setGalleryImage,
+  ] = useState(null);
+
+  const [
+    bulkItems,
+    setBulkItems,
+  ] = useState(() =>
+    storageGetJSON(
+      "smm_bulk",
+      []
+    )
   );
 
-  const [language, setLanguage] = useState(
-    localStorage.getItem("smm_language") || "en"
-  );
+  const [
+    bulkModal,
+    setBulkModal,
+  ] = useState(false);
 
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedCategory, setSelectedCategory] =
-    useState("All");
+  const [
+    activeFAQ,
+    setActiveFAQ,
+  ] = useState(null);
 
-  const [selectedProduct, setSelectedProduct] =
-    useState(null);
+  const [
+    showTop,
+    setShowTop,
+  ] = useState(false);
 
-  const [productModal, setProductModal] = useState(false);
+  const [
+    loading,
+    setLoading,
+  ] = useState(true);
 
-  const [galleryImage, setGalleryImage] =
-    useState(null);
+  const [
+    copied,
+    setCopied,
+  ] = useState("");
 
-  const [bulkItems, setBulkItems] = useState(() => {
-    try {
-      return JSON.parse(
-        localStorage.getItem("smm_bulk") || "[]"
-      );
-    } catch {
-      return [];
-    }
+  const [
+    toast,
+    setToast,
+  ] = useState("");
+
+  const [
+    sent,
+    setSent,
+  ] = useState(false);
+
+  const [
+    is404,
+    setIs404,
+  ] = useState(false);
+
+  const [
+    counters,
+    setCounters,
+  ] = useState({
+    products: 0,
+    categories: 0,
+    areas: 0,
   });
 
-  const [bulkModal, setBulkModal] = useState(false);
-
-  const [activeFAQ, setActiveFAQ] = useState(null);
-
-  const [showTop, setShowTop] = useState(false);
-
-  const [loading, setLoading] = useState(true);
-
-  const [copied, setCopied] = useState("");
-
-  const [quote, setQuote] = useState({
+  const [
+    quote,
+    setQuote,
+  ] = useState({
     name: "",
     phone: "",
     email: "",
@@ -574,17 +864,9 @@ function App() {
     message: "",
   });
 
-  const [sent, setSent] = useState(false);
-
-  const [counters, setCounters] = useState({
-    projects: 0,
-    customers: 0,
-    materials: 0,
-  });
-
-  const [is404, setIs404] = useState(false);
-
-  const lang = translations[language] || translations.en;
+  const lang =
+    translations[language] ||
+    translations.en;
 
   /* ============================================================
      INITIALIZATION
@@ -592,24 +874,38 @@ function App() {
 
   useEffect(() => {
     saveTrackingData();
+
     setupSEO();
+
     setupStructuredData();
 
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 800);
+    const timer =
+      setTimeout(() => {
+        setLoading(false);
+      }, 700);
 
-    return () => clearTimeout(timer);
+    return () =>
+      clearTimeout(timer);
   }, []);
 
   /* ============================================================
-     404 HANDLING
+     404
      ============================================================ */
 
   useEffect(() => {
-    const validPaths = ["/", ""];
+    const validPaths = [
+      "/",
+      "",
+    ];
 
-    if (!validPaths.includes(window.location.pathname)) {
+    const currentPath =
+      window.location.pathname;
+
+    if (
+      !validPaths.includes(
+        currentPath
+      )
+    ) {
       setIs404(true);
     }
   }, []);
@@ -619,9 +915,12 @@ function App() {
      ============================================================ */
 
   useEffect(() => {
-    document.body.classList.toggle("dark-mode", darkMode);
+    document.body.classList.toggle(
+      "dark-mode",
+      darkMode
+    );
 
-    localStorage.setItem(
+    storageSet(
       "smm_dark",
       String(darkMode)
     );
@@ -632,12 +931,13 @@ function App() {
      ============================================================ */
 
   useEffect(() => {
-    localStorage.setItem(
+    storageSet(
       "smm_language",
       language
     );
 
-    document.documentElement.lang = language;
+    document.documentElement.lang =
+      language;
   }, [language]);
 
   /* ============================================================
@@ -645,25 +945,50 @@ function App() {
      ============================================================ */
 
   useEffect(() => {
-    localStorage.setItem(
+    storageSet(
       "smm_bulk",
-      JSON.stringify(bulkItems)
+      JSON.stringify(
+        bulkItems
+      )
     );
   }, [bulkItems]);
+
+  /* ============================================================
+     TOAST AUTO CLOSE
+     ============================================================ */
+
+  useEffect(() => {
+    if (!toast) {
+      return;
+    }
+
+    const timer =
+      setTimeout(() => {
+        setToast("");
+      }, 2500);
+
+    return () =>
+      clearTimeout(timer);
+  }, [toast]);
 
   /* ============================================================
      SCROLL
      ============================================================ */
 
   useEffect(() => {
-    const handleScroll = () => {
-      setShowTop(window.scrollY > 500);
-    };
+    const handleScroll =
+      () => {
+        setShowTop(
+          window.scrollY > 500
+        );
+      };
 
     window.addEventListener(
       "scroll",
       handleScroll,
-      { passive: true }
+      {
+        passive: true,
+      }
     );
 
     return () =>
@@ -678,93 +1003,143 @@ function App() {
      ============================================================ */
 
   useEffect(() => {
-    if (loading) return;
+    if (loading) {
+      return;
+    }
 
     const targets = {
-      projects: 120,
-      customers: 450,
-      materials: 2000,
+      products: products.length,
+      categories: new Set(
+        products.map(
+          (item) =>
+            item.category
+        )
+      ).size,
+      areas:
+        deliveryAreas.length,
     };
 
-    const duration = 1800;
-    const startTime = performance.now();
+    const duration = 1200;
 
-    const animate = (now) => {
-      const progress = Math.min(
-        (now - startTime) / duration,
-        1
-      );
+    const start =
+      performance.now();
+
+    const animate = (
+      currentTime
+    ) => {
+      const progress =
+        Math.min(
+          (currentTime - start) /
+            duration,
+          1
+        );
 
       const ease =
-        1 - Math.pow(1 - progress, 3);
+        1 -
+        Math.pow(
+          1 - progress,
+          3
+        );
 
       setCounters({
-        projects: Math.floor(
-          targets.projects * ease
+        products: Math.floor(
+          targets.products *
+            ease
         ),
-        customers: Math.floor(
-          targets.customers * ease
-        ),
-        materials: Math.floor(
-          targets.materials * ease
+
+        categories:
+          Math.floor(
+            targets.categories *
+              ease
+          ),
+
+        areas: Math.floor(
+          targets.areas *
+            ease
         ),
       });
 
       if (progress < 1) {
-        requestAnimationFrame(animate);
+        requestAnimationFrame(
+          animate
+        );
       }
     };
 
-    requestAnimationFrame(animate);
+    requestAnimationFrame(
+      animate
+    );
   }, [loading]);
 
   /* ============================================================
-     FILTERS
+     CATEGORIES
      ============================================================ */
 
   const categories = useMemo(
     () => [
       "All",
-      ...new Set(products.map((p) => p.category)),
+      ...new Set(
+        products.map(
+          (product) =>
+            product.category
+        )
+      ),
     ],
     []
   );
 
-  const filteredProducts = useMemo(() => {
-    const search = searchTerm
-      .trim()
-      .toLowerCase();
+  /* ============================================================
+     FILTER PRODUCTS
+     ============================================================ */
 
-    return products.filter((product) => {
-      const text = [
-        product.title,
-        product.desc,
-        product.category,
-        product.keywords,
-        ...product.brands,
-      ]
-        .join(" ")
-        .toLowerCase();
+  const filteredProducts =
+    useMemo(() => {
+      const search =
+        searchTerm
+          .trim()
+          .toLowerCase();
 
-      const matchesSearch =
-        !search || text.includes(search);
+      return products.filter(
+        (product) => {
+          const searchableText = [
+            product.title,
+            product.desc,
+            product.category,
+            product.keywords,
+            ...product.brands,
+          ]
+            .join(" ")
+            .toLowerCase();
 
-      const matchesCategory =
-        selectedCategory === "All" ||
-        product.category === selectedCategory;
+          const matchesSearch =
+            !search ||
+            searchableText.includes(
+              search
+            );
 
-      return (
-        matchesSearch &&
-        matchesCategory
+          const matchesCategory =
+            selectedCategory ===
+              "All" ||
+            product.category ===
+              selectedCategory;
+
+          return (
+            matchesSearch &&
+            matchesCategory
+          );
+        }
       );
-    });
-  }, [searchTerm, selectedCategory]);
+    }, [
+      searchTerm,
+      selectedCategory,
+    ]);
 
   /* ============================================================
      COMMON ACTIONS
      ============================================================ */
 
-  const closeMenu = () => setMenuOpen(false);
+  const closeMenu = () =>
+    setMenuOpen(false);
 
   const scrollTo = (id) => {
     closeMenu();
@@ -779,64 +1154,89 @@ function App() {
     }, 50);
   };
 
+  const showToast = (
+    message
+  ) => {
+    setToast(message);
+  };
+
   /* ============================================================
      WHATSAPP
      ============================================================ */
 
   const openWhatsApp = (
-    message = "",
+    customMessage = "",
     product = null,
     source = "general"
   ) => {
-    const defaultMessage =
-      `Hello ${BUSINESS_NAME}, I am interested in your building materials.`;
+    let message =
+      customMessage;
 
-    let finalMessage =
-      message || defaultMessage;
+    if (!message) {
+      message =
+        `Hello ${BUSINESS.name},
+
+I am interested in your building materials.
+
+Please share your best price and availability.`;
+    }
 
     if (product) {
-      finalMessage =
-        `Hello ${BUSINESS_NAME},
+      message =
+        `Hello ${BUSINESS.name},
 
 I am interested in:
+
 Product: ${product.title}
 Category: ${product.category}
 Unit: ${product.unit}
 
-Please share your best price and availability.
+Brands:
+${product.brands.join(", ")}
 
-Source: Product Enquiry`;
-
-      trackEvent(
-        "product_whatsapp_click",
-        {
-          product: product.title,
-          source,
-        }
-      );
-    } else {
-      trackEvent(
-        "whatsapp_click",
-        { source }
-      );
+Please share your best price and availability.`;
     }
 
-    const tracking = getTrackingData();
+    const tracking =
+      getTrackingData();
 
-    finalMessage += `
+    message += `
 
 ---
 Website Source:
-${tracking.utm_source || "Direct"}
+${
+  tracking.utm_source ||
+  "Direct"
+}
+
 Campaign:
-${tracking.utm_campaign || "Direct"}
+${
+  tracking.utm_campaign ||
+  "Direct"
+}
+
 Referral:
-${tracking.referral || "None"}`;
+${
+  tracking.referral ||
+  "None"
+}`;
+
+    trackEvent(
+      product
+        ? "product_whatsapp_click"
+        : "whatsapp_click",
+      {
+        source,
+        product:
+          product?.title ||
+          null,
+      }
+    );
 
     window.open(
-      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-        finalMessage
-      )}`,
+      createWhatsAppURL(
+        message
+      ),
       "_blank",
       "noopener,noreferrer"
     );
@@ -847,21 +1247,25 @@ ${tracking.referral || "None"}`;
      ============================================================ */
 
   const makeCall = () => {
-    trackEvent("phone_click");
+    trackEvent(
+      "phone_click"
+    );
 
     window.location.href =
-      `tel:${BUSINESS_PHONE}`;
+      `tel:${BUSINESS.phone}`;
   };
 
   /* ============================================================
-     MAP
+     DIRECTIONS
      ============================================================ */
 
   const getDirections = () => {
-    trackEvent("directions_click");
+    trackEvent(
+      "directions_click"
+    );
 
     window.open(
-      GOOGLE_MAPS_SEARCH_URL,
+      getMapsURL(),
       "_blank",
       "noopener,noreferrer"
     );
@@ -871,15 +1275,27 @@ ${tracking.referral || "None"}`;
      COPY
      ============================================================ */
 
-  const copyText = async (value, type) => {
+  const copyText = async (
+    value,
+    type
+  ) => {
     try {
-      await navigator.clipboard.writeText(value);
+      await navigator.clipboard.writeText(
+        value
+      );
 
       setCopied(type);
 
-      trackEvent("copy_click", {
-        type,
-      });
+      trackEvent(
+        "copy_click",
+        { type }
+      );
+
+      showToast(
+        type === "phone"
+          ? "Phone number copied"
+          : "Email copied"
+      );
 
       setTimeout(() => {
         setCopied("");
@@ -893,120 +1309,252 @@ ${tracking.referral || "None"}`;
   };
 
   /* ============================================================
-     PRODUCT ACTIONS
+     ADD TO BULK
      ============================================================ */
 
-  const addToBulk = (product) => {
-    setBulkItems((previous) => {
-      const existing =
-        previous.find(
-          (item) =>
-            item.id === product.id
+  const addToBulk = (
+    product
+  ) => {
+    setBulkItems(
+      (previous) => {
+        const existing =
+          previous.find(
+            (item) =>
+              item.id ===
+              product.id
+          );
+
+        if (existing) {
+          showToast(
+            `${product.title} quantity increased`
+          );
+
+          return previous.map(
+            (item) =>
+              item.id ===
+              product.id
+                ? {
+                    ...item,
+                    quantity:
+                      Number(
+                        item.quantity ||
+                          0
+                      ) + 1,
+                  }
+                : item
+          );
+        }
+
+        showToast(
+          `${product.title} added to bulk quote`
         );
 
-      if (existing) {
-        return previous.map((item) =>
-          item.id === product.id
-            ? {
-                ...item,
-                quantity:
-                  Number(item.quantity || 0) +
-                  1,
-              }
-            : item
-        );
+        return [
+          ...previous,
+          {
+            ...product,
+            quantity: 1,
+          },
+        ];
       }
+    );
 
-      return [
-        ...previous,
-        {
-          ...product,
-          quantity: 1,
-        },
-      ];
-    });
-
-    trackEvent("add_bulk_product", {
-      product: product.title,
-    });
-  };
-
-  const removeFromBulk = (id) => {
-    setBulkItems((items) =>
-      items.filter(
-        (item) => item.id !== id
-      )
+    trackEvent(
+      "add_bulk_product",
+      {
+        product:
+          product.title,
+      }
     );
   };
+
+  /* ============================================================
+     REMOVE BULK
+     ============================================================ */
+
+  const removeFromBulk = (
+    id
+  ) => {
+    setBulkItems(
+      (items) =>
+        items.filter(
+          (item) =>
+            item.id !== id
+        )
+    );
+
+    showToast(
+      "Product removed"
+    );
+  };
+
+  /* ============================================================
+     UPDATE BULK QUANTITY
+     ============================================================ */
 
   const updateBulkQty = (
     id,
     value
   ) => {
-    const quantity = Math.max(
-      1,
-      Number(value) || 1
-    );
+    const numericValue =
+      Number(value);
 
-    setBulkItems((items) =>
-      items.map((item) =>
-        item.id === id
-          ? {
-              ...item,
-              quantity,
-            }
-          : item
-      )
+    const quantity =
+      Number.isFinite(
+        numericValue
+      ) &&
+      numericValue > 0
+        ? numericValue
+        : 1;
+
+    setBulkItems(
+      (items) =>
+        items.map(
+          (item) =>
+            item.id === id
+              ? {
+                  ...item,
+                  quantity,
+                }
+              : item
+        )
     );
   };
 
   /* ============================================================
-     PRODUCT AVAILABILITY
+     CLEAR BULK
      ============================================================ */
 
-  const getAvailabilityClass = (
-    status
+  const clearBulk = () => {
+    setBulkItems([]);
+
+    showToast(
+      "Bulk quote cleared"
+    );
+  };
+
+  /* ============================================================
+     PRODUCT DETAILS
+     ============================================================ */
+
+  const openProduct = (
+    product
   ) => {
-    if (status === "In Stock")
-      return "stockGood";
+    setSelectedProduct(
+      product
+    );
 
-    if (status === "Limited Stock")
-      return "stockLimited";
+    setProductModal(true);
 
-    return "stockContact";
+    trackEvent(
+      "product_view",
+      {
+        product:
+          product.title,
+      }
+    );
   };
 
   /* ============================================================
-     BULK SUBMIT
+     PRODUCT → QUOTE
      ============================================================ */
 
-  const submitBulkQuote = () => {
-    if (!bulkItems.length) return;
+  const enquireProduct = (
+    product
+  ) => {
+    setQuote(
+      (previous) => ({
+        ...previous,
+        material:
+          product.title,
+      })
+    );
 
-    let message =
-      `Hello ${BUSINESS_NAME},
+    setProductModal(
+      false
+    );
+
+    scrollTo("quote");
+
+    trackEvent(
+      "product_quote_click",
+      {
+        product:
+          product.title,
+      }
+    );
+  };
+
+  /* ============================================================
+     AVAILABILITY CLASS
+     ============================================================ */
+
+  const getAvailabilityClass =
+    (status) => {
+      if (
+        status === "In Stock"
+      ) {
+        return "stockGood";
+      }
+
+      if (
+        status ===
+        "Limited Stock"
+      ) {
+        return "stockLimited";
+      }
+
+      return "stockContact";
+    };
+
+  /* ============================================================
+     BULK QUOTE SUBMIT
+     ============================================================ */
+
+  const submitBulkQuote =
+    () => {
+      if (!bulkItems.length) {
+        showToast(
+          "Please add at least one material"
+        );
+
+        return;
+      }
+
+      if (
+        quote.phone &&
+        !isValidIndianPhone(
+          quote.phone
+        )
+      ) {
+        showToast(
+          "Please enter a valid Indian mobile number"
+        );
+
+        return;
+      }
+
+      let message =
+        `Hello ${BUSINESS.name},
 
 📦 BULK MATERIAL QUOTE REQUEST
 
 `;
 
-    bulkItems.forEach(
-      (item, index) => {
-        message += `${index + 1}. ${
-          item.title
-        } - ${
-          item.quantity
-        } ${item.unit}
-`;
-      }
-    );
+      bulkItems.forEach(
+        (item, index) => {
+          message +=
+            `${index + 1}. ${
+              item.title
+            } - ${
+              item.quantity
+            } ${
+              item.unit
+            }\n`;
+        }
+      );
 
-    message += `
-📍 Delivery Location:
-${
-  quote.location ||
-  "Please confirm location"
-}
+      message += `
 
 👤 Name:
 ${
@@ -1020,75 +1568,159 @@ ${
   "Not provided"
 }
 
+📍 Delivery Location:
+${
+  quote.location ||
+  "Please confirm location"
+}
+
 Please share your best bulk price and availability.`;
 
-    trackEvent(
-      "bulk_quote_whatsapp",
-      {
-        items: bulkItems.map(
-          (item) => item.title
-        ),
-      }
-    );
+      trackEvent(
+        "bulk_quote_whatsapp",
+        {
+          items:
+            bulkItems.map(
+              (item) =>
+                item.title
+            ),
+        }
+      );
 
-    openWhatsApp(
-      message,
-      null,
-      "bulk_quote"
-    );
+      openWhatsApp(
+        message,
+        null,
+        "bulk_quote"
+      );
 
-    setBulkItems([]);
-    setBulkModal(false);
-  };
+      setBulkItems([]);
+
+      setBulkModal(false);
+
+      showToast(
+        "Bulk enquiry prepared"
+      );
+    };
 
   /* ============================================================
-     ADVANCED QUOTE SUBMIT
+     NORMAL QUOTE SUBMIT
      ============================================================ */
 
-  const submitQuote = (event) => {
+  const submitQuote = (
+    event
+  ) => {
     event.preventDefault();
+
+    const name =
+      quote.name.trim();
+
+    const phone =
+      quote.phone.trim();
+
+    if (!name) {
+      showToast(
+        "Please enter your name"
+      );
+
+      return;
+    }
+
+    if (
+      !isValidIndianPhone(
+        phone
+      )
+    ) {
+      showToast(
+        "Please enter a valid 10-digit Indian mobile number"
+      );
+
+      return;
+    }
+
+    const cleanMobile =
+      cleanPhone(phone);
+
+    if (
+      quote.email &&
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(
+        quote.email
+      )
+    ) {
+      showToast(
+        "Please enter a valid email address"
+      );
+
+      return;
+    }
 
     const tracking =
       getTrackingData();
 
     const message =
-      `Hello ${BUSINESS_NAME},
+      `Hello ${BUSINESS.name},
 
 🧾 NEW QUOTATION REQUEST
 
 👤 Name:
-${quote.name}
+${name}
 
 📞 Phone:
-${quote.phone}
+${cleanMobile}
 
 📧 Email:
-${quote.email || "Not provided"}
+${
+  quote.email ||
+  "Not provided"
+}
 
 📦 Material:
-${quote.material || "Not specified"}
+${
+  quote.material ||
+  "Not specified"
+}
 
 📊 Quantity:
-${quote.quantity || "Not specified"}
+${
+  quote.quantity ||
+  "Not specified"
+}
 
 📍 Project Location:
-${quote.location || "Not specified"}
+${
+  quote.location ||
+  "Not specified"
+}
 
 📝 Requirement:
-${quote.message || "Please contact me."}
+${
+  quote.message ||
+  "Please contact me."
+}
 
 ---
 UTM Source:
-${tracking.utm_source || "Direct"}
+${
+  tracking.utm_source ||
+  "Direct"
+}
 
 UTM Medium:
-${tracking.utm_medium || "Direct"}
+${
+  tracking.utm_medium ||
+  "Direct"
+}
 
 Campaign:
-${tracking.utm_campaign || "Direct"}
+${
+  tracking.utm_campaign ||
+  "Direct"
+}
 
 Referral:
-${tracking.referral || "None"}`;
+${
+  tracking.referral ||
+  "None"
+}`;
 
     trackEvent(
       "quotation_submit",
@@ -1108,13 +1740,17 @@ ${tracking.referral || "None"}`;
 
     setSent(true);
 
+    showToast(
+      "WhatsApp enquiry prepared"
+    );
+
     setTimeout(() => {
       setSent(false);
     }, 5000);
   };
 
   /* ============================================================
-     LOADER
+     LOADING
      ============================================================ */
 
   if (loading) {
@@ -1138,7 +1774,8 @@ ${tracking.referral || "None"}`;
           </div>
 
           <p>
-            Building better connections...
+            Building better
+            connections...
           </p>
         </div>
       </div>
@@ -1146,7 +1783,7 @@ ${tracking.referral || "None"}`;
   }
 
   /* ============================================================
-     404 PAGE
+     404
      ============================================================ */
 
   if (is404) {
@@ -1162,8 +1799,9 @@ ${tracking.referral || "None"}`;
           </h1>
 
           <p>
-            The page you are looking for
-            doesn't exist.
+            The page you are
+            looking for doesn't
+            exist.
           </p>
 
           <a
@@ -1191,6 +1829,19 @@ ${tracking.referral || "None"}`;
     >
 
       {/* ======================================================
+          TOAST
+          ====================================================== */}
+
+      {toast && (
+        <div
+          className="toast"
+          role="status"
+        >
+          ✓ {toast}
+        </div>
+      )}
+
+      {/* ======================================================
           TOP BAR
           ====================================================== */}
 
@@ -1212,7 +1863,8 @@ ${tracking.referral || "None"}`;
               className="iconButton"
               onClick={() =>
                 setDarkMode(
-                  !darkMode
+                  (value) =>
+                    !value
                 )
               }
               aria-label="Toggle dark mode"
@@ -1261,13 +1913,17 @@ ${tracking.referral || "None"}`;
             href="#home"
             className="brand"
             onClick={closeMenu}
-            aria-label={BUSINESS_NAME}
+            aria-label={
+              BUSINESS.name
+            }
           >
+
             <span className="brandLogo">
               ॐ
             </span>
 
             <span className="brandText">
+
               <strong>
                 श्री मंगल मूर्ती
               </strong>
@@ -1275,14 +1931,17 @@ ${tracking.referral || "None"}`;
               <small>
                 TRADERS
               </small>
+
             </span>
+
           </a>
 
           <button
             className="menuButton"
             onClick={() =>
               setMenuOpen(
-                !menuOpen
+                (value) =>
+                  !value
               )
             }
             aria-label="Open navigation"
@@ -1305,49 +1964,72 @@ ${tracking.referral || "None"}`;
 
             <a
               href="#home"
-              onClick={closeMenu}
+              onClick={
+                closeMenu
+              }
             >
               {lang.home}
             </a>
 
             <a
               href="#about"
-              onClick={closeMenu}
+              onClick={
+                closeMenu
+              }
             >
               {lang.about}
             </a>
 
             <a
               href="#products"
-              onClick={closeMenu}
+              onClick={
+                closeMenu
+              }
             >
               {lang.products}
             </a>
 
             <a
               href="#brands"
-              onClick={closeMenu}
+              onClick={
+                closeMenu
+              }
             >
               {lang.brands}
             </a>
 
             <a
               href="#gallery"
-              onClick={closeMenu}
+              onClick={
+                closeMenu
+              }
             >
               {lang.gallery}
             </a>
 
             <a
               href="#reviews"
-              onClick={closeMenu}
+              onClick={
+                closeMenu
+              }
             >
               {lang.reviews}
             </a>
 
             <a
+              href="#faq"
+              onClick={
+                closeMenu
+              }
+            >
+              {lang.faq}
+            </a>
+
+            <a
               href="#contact"
-              onClick={closeMenu}
+              onClick={
+                closeMenu
+              }
             >
               {lang.contact}
             </a>
@@ -1355,7 +2037,9 @@ ${tracking.referral || "None"}`;
             <a
               href="#quote"
               className="navQuote"
-              onClick={closeMenu}
+              onClick={
+                closeMenu
+              }
             >
               {lang.quote}
             </a>
@@ -1363,6 +2047,7 @@ ${tracking.referral || "None"}`;
           </nav>
 
         </div>
+
       </header>
 
       <main id="home">
@@ -1374,6 +2059,7 @@ ${tracking.referral || "None"}`;
         <section className="heroSection">
 
           <div className="heroGlow heroGlowOne" />
+
           <div className="heroGlow heroGlowTwo" />
 
           <div className="container heroGrid">
@@ -1382,12 +2068,12 @@ ${tracking.referral || "None"}`;
 
               <div className="heroBadge">
                 <span>✦</span>
-                TRUSTED BUILDING MATERIAL
+                BUILDING MATERIAL
                 SUPPLIER
               </div>
 
               <p className="heroHindi">
-                श्री मंगल मूर्ती ट्रेडर्स
+                {BUSINESS.hindiName}
               </p>
 
               <h1>
@@ -1399,12 +2085,11 @@ ${tracking.referral || "None"}`;
               </h1>
 
               <p className="heroLead">
-                Reliable building and
+                Building and
                 construction materials
                 for residential,
-                commercial and
-                infrastructure projects
-                in Pune.
+                commercial and project
+                requirements in Pune.
               </p>
 
               <div className="heroActions">
@@ -1441,23 +2126,17 @@ ${tracking.referral || "None"}`;
               <div className="heroTrust">
 
                 <div>
-                  <strong>
-                    ✓
-                  </strong>
-                  Verified Enquiry
+                  <strong>✓</strong>
+                  Product Enquiry
                 </div>
 
                 <div>
-                  <strong>
-                    ✓
-                  </strong>
+                  <strong>✓</strong>
                   Bulk Orders
                 </div>
 
                 <div>
-                  <strong>
-                    ✓
-                  </strong>
+                  <strong>✓</strong>
                   Local Delivery
                 </div>
 
@@ -1467,31 +2146,31 @@ ${tracking.referral || "None"}`;
 
                 <div>
                   <strong>
-                    {counters.projects}+
+                    {counters.products}+
                   </strong>
 
                   <span>
-                    Projects
+                    Products
                   </span>
                 </div>
 
                 <div>
                   <strong>
-                    {counters.customers}+
+                    {counters.categories}+
                   </strong>
 
                   <span>
-                    Customers
+                    Categories
                   </span>
                 </div>
 
                 <div>
                   <strong>
-                    {counters.materials}+
+                    {counters.areas}+
                   </strong>
 
                   <span>
-                    Material Options
+                    Service Areas
                   </span>
                 </div>
 
@@ -1504,6 +2183,7 @@ ${tracking.referral || "None"}`;
               <div className="heroCardMain">
 
                 <div className="heroCardTop">
+
                   <span>
                     BUILD WITH
                   </span>
@@ -1511,6 +2191,7 @@ ${tracking.referral || "None"}`;
                   <strong>
                     CONFIDENCE
                   </strong>
+
                 </div>
 
                 <div className="heroConstruction">
@@ -1534,19 +2215,23 @@ ${tracking.referral || "None"}`;
                 </div>
 
                 <div className="heroMiniCard">
+
                   <span>
                     ✓
                   </span>
 
                   <div>
+
                     <strong>
                       Quality Materials
                     </strong>
 
                     <small>
-                      For every project
+                      For your project
                     </small>
+
                   </div>
+
                 </div>
 
               </div>
@@ -1554,6 +2239,7 @@ ${tracking.referral || "None"}`;
             </div>
 
           </div>
+
         </section>
 
         {/* ====================================================
@@ -1561,17 +2247,21 @@ ${tracking.referral || "None"}`;
             ==================================================== */}
 
         <div className="ticker">
+
           <div className="tickerTrack">
+
             CEMENT ✦ TMT STEEL ✦
             PLYWOOD ✦ SANITARYWARE ✦
             ELECTRICAL ✦ PAINTS ✦
             PLUMBING ✦ HARDWARE ✦
             AGGREGATES ✦
+
           </div>
+
         </div>
 
         {/* ====================================================
-            TRUST BADGES
+            TRUST
             ==================================================== */}
 
         <section className="trustSection">
@@ -1587,8 +2277,9 @@ ${tracking.referral || "None"}`;
                 </strong>
 
                 <p>
-                  Reliable products
-                  for your project.
+                  Product options for
+                  different project
+                  requirements.
                 </p>
               </div>
             </div>
@@ -1602,8 +2293,9 @@ ${tracking.referral || "None"}`;
                 </strong>
 
                 <p>
-                  Request pricing
-                  before ordering.
+                  Request pricing based
+                  on quantity and
+                  requirement.
                 </p>
               </div>
             </div>
@@ -1613,12 +2305,13 @@ ${tracking.referral || "None"}`;
 
               <div>
                 <strong>
-                  Fast Response
+                  Quick Enquiry
                 </strong>
 
                 <p>
-                  Quick quotation
-                  assistance.
+                  Send your requirement
+                  directly through
+                  WhatsApp.
                 </p>
               </div>
             </div>
@@ -1632,13 +2325,15 @@ ${tracking.referral || "None"}`;
                 </strong>
 
                 <p>
-                  Local delivery
-                  assistance.
+                  Delivery availability
+                  based on location and
+                  order.
                 </p>
               </div>
             </div>
 
           </div>
+
         </section>
 
         {/* ====================================================
@@ -1653,6 +2348,7 @@ ${tracking.referral || "None"}`;
           <div className="container splitSection">
 
             <div>
+
               <div className="eyebrow">
                 ABOUT OUR BUSINESS
               </div>
@@ -1662,32 +2358,31 @@ ${tracking.referral || "None"}`;
                 for construction
                 material sourcing.
               </h2>
+
             </div>
 
             <div className="aboutContent">
 
               <p>
                 <strong>
-                  Shree Mangal Murti
-                  Traders
+                  {BUSINESS.name}
                 </strong>{" "}
                 supplies essential
                 building and
                 construction materials
                 for residential,
-                commercial and
-                project requirements.
+                commercial and project
+                requirements.
               </p>
 
               <p>
-                Our goal is to make
-                material sourcing
-                simple by providing
-                product choices,
-                quotation support,
-                bulk enquiry options
-                and convenient
-                WhatsApp communication.
+                Customers can search
+                products, compare
+                categories, prepare
+                bulk enquiries and
+                contact the business
+                directly through
+                WhatsApp or phone.
               </p>
 
               <button
@@ -1706,6 +2401,7 @@ ${tracking.referral || "None"}`;
             </div>
 
           </div>
+
         </section>
 
         {/* ====================================================
@@ -1722,6 +2418,7 @@ ${tracking.referral || "None"}`;
             <div className="sectionHeading">
 
               <div>
+
                 <div className="eyebrow">
                   OUR PRODUCTS
                 </div>
@@ -1730,17 +2427,16 @@ ${tracking.referral || "None"}`;
                   Materials for every
                   stage of construction.
                 </h2>
+
               </div>
 
               <p>
                 Search products, filter
-                categories and create
-                a bulk quotation.
+                categories and create a
+                bulk quotation.
               </p>
 
             </div>
-
-            {/* SEARCH TOOLBAR */}
 
             <div className="productToolbar">
 
@@ -1798,11 +2494,16 @@ ${tracking.referral || "None"}`;
                   }
                   aria-label="Product category"
                 >
+
                   {categories.map(
                     (category) => (
                       <option
-                        key={category}
-                        value={category}
+                        key={
+                          category
+                        }
+                        value={
+                          category
+                        }
                       >
                         {category ===
                         "All"
@@ -1811,6 +2512,7 @@ ${tracking.referral || "None"}`;
                       </option>
                     )
                   )}
+
                 </select>
 
               </div>
@@ -1824,17 +2526,18 @@ ${tracking.referral || "None"}`;
                 📦{" "}
                 {lang.bulkQuote}
                 <b>
-                  {bulkItems.length}
+                  {
+                    bulkItems.length
+                  }
                 </b>
               </button>
 
             </div>
 
-            {/* PRODUCT GRID */}
-
             {filteredProducts.length ===
             0 ? (
               <div className="emptyProducts">
+
                 <span>
                   🔍
                 </span>
@@ -1847,15 +2550,38 @@ ${tracking.referral || "None"}`;
                   Try another product
                   or category.
                 </p>
+
+                <button
+                  className="primaryButton"
+                  onClick={() => {
+                    setSearchTerm(
+                      ""
+                    );
+
+                    setSelectedCategory(
+                      "All"
+                    );
+                  }}
+                >
+                  Clear Filters
+                </button>
+
               </div>
             ) : (
+
               <div className="productGrid">
 
                 {filteredProducts.map(
-                  (product, index) => (
+                  (
+                    product,
+                    index
+                  ) => (
+
                     <article
                       className="productCard"
-                      key={product.id}
+                      key={
+                        product.id
+                      }
                     >
 
                       <div className="productNumber">
@@ -1903,11 +2629,17 @@ ${tracking.referral || "None"}`;
                       <div className="brandTags">
 
                         {product.brands.map(
-                          (brand) => (
+                          (
+                            brand
+                          ) => (
                             <span
-                              key={brand}
+                              key={
+                                brand
+                              }
                             >
-                              {brand}
+                              {
+                                brand
+                              }
                             </span>
                           )
                         )}
@@ -1929,22 +2661,11 @@ ${tracking.referral || "None"}`;
 
                           <button
                             className="outlineButton"
-                            onClick={() => {
-                              setSelectedProduct(
+                            onClick={() =>
+                              openProduct(
                                 product
-                              );
-                              setProductModal(
-                                true
-                              );
-
-                              trackEvent(
-                                "product_view",
-                                {
-                                  product:
-                                    product.title,
-                                }
-                              );
-                            }}
+                              )
+                            }
                           >
                             Details
                           </button>
@@ -1965,17 +2686,20 @@ ${tracking.referral || "None"}`;
                       </div>
 
                     </article>
+
                   )
                 )}
 
               </div>
+
             )}
 
           </div>
+
         </section>
 
         {/* ====================================================
-            GET BEST PRICE CTA
+            BEST PRICE CTA
             ==================================================== */}
 
         <section className="bestPriceSection">
@@ -2018,7 +2742,7 @@ ${tracking.referral || "None"}`;
               <button
                 onClick={() =>
                   openWhatsApp(
-                    `Hello ${BUSINESS_NAME},
+                    `Hello ${BUSINESS.name},
 
 I want to get the best price for construction materials.
 
@@ -2035,6 +2759,7 @@ Please contact me with pricing and availability.`,
             </div>
 
           </div>
+
         </section>
 
         {/* ====================================================
@@ -2086,6 +2811,7 @@ Please contact me with pricing and availability.`,
             </div>
 
           </div>
+
         </section>
 
         {/* ====================================================
@@ -2115,9 +2841,9 @@ Please contact me with pricing and availability.`,
               </div>
 
               <p>
-                Replace the gallery
-                images with your actual
-                business photos.
+                Add your actual business
+                photos to the gallery
+                folder.
               </p>
 
             </div>
@@ -2126,9 +2852,12 @@ Please contact me with pricing and availability.`,
 
               {galleryImages.map(
                 (image) => (
+
                   <button
                     className="galleryCard"
-                    key={image.id}
+                    key={
+                      image.id
+                    }
                     onClick={() =>
                       setGalleryImage(
                         image
@@ -2138,22 +2867,48 @@ Please contact me with pricing and availability.`,
                   >
 
                     <img
-                      src={image.src}
-                      alt={image.alt}
+                      src={
+                        image.src
+                      }
+                      alt={
+                        image.alt
+                      }
                       loading="lazy"
-                      onError={(e) => {
-                        e.currentTarget.style.display =
+                      onError={(
+                        event
+                      ) => {
+                        event.currentTarget.style.display =
                           "none";
-                        e.currentTarget.nextElementSibling.style.display =
-                          "flex";
+
+                        const fallback =
+                          event
+                            .currentTarget
+                            .parentElement
+                            ?.querySelector(
+                              ".galleryFallback"
+                            );
+
+                        if (fallback) {
+                          fallback.style.display =
+                            "flex";
+                        }
                       }}
                     />
 
-                    <span className="galleryFallback">
-                      {image.emoji}
+                    <span
+                      className="galleryFallback"
+                      style={{
+                        display:
+                          "none",
+                      }}
+                    >
+                      {
+                        image.emoji
+                      }
                     </span>
 
                     <div>
+
                       <strong>
                         {
                           image.title
@@ -2163,19 +2918,22 @@ Please contact me with pricing and availability.`,
                       <small>
                         View photo →
                       </small>
+
                     </div>
 
                   </button>
+
                 )
               )}
 
             </div>
 
           </div>
+
         </section>
 
         {/* ====================================================
-            DELIVERY AREAS
+            DELIVERY
             ==================================================== */}
 
         <section className="deliverySection">
@@ -2202,7 +2960,9 @@ Please contact me with pricing and availability.`,
 
               <button
                 className="deliveryButton"
-                onClick={getDirections}
+                onClick={
+                  getDirections
+                }
               >
                 📍 Check Location
               </button>
@@ -2224,6 +2984,7 @@ Please contact me with pricing and availability.`,
             </div>
 
           </div>
+
         </section>
 
         {/* ====================================================
@@ -2253,24 +3014,21 @@ Please contact me with pricing and availability.`,
             <div className="whyGrid">
 
               <div className="whyCard">
-                <span>
-                  🏆
-                </span>
+                <span>🏆</span>
 
                 <h3>
                   Quality Focus
                 </h3>
 
                 <p>
-                  Focus on dependable
-                  products and brands.
+                  Product choices from
+                  known brands and
+                  suppliers.
                 </p>
               </div>
 
               <div className="whyCard">
-                <span>
-                  ₹
-                </span>
+                <span>₹</span>
 
                 <h3>
                   Competitive Pricing
@@ -2278,14 +3036,13 @@ Please contact me with pricing and availability.`,
 
                 <p>
                   Request pricing based
-                  on your requirement.
+                  on your quantity and
+                  requirement.
                 </p>
               </div>
 
               <div className="whyCard">
-                <span>
-                  ⚡
-                </span>
+                <span>⚡</span>
 
                 <h3>
                   Quick Communication
@@ -2298,9 +3055,7 @@ Please contact me with pricing and availability.`,
               </div>
 
               <div className="whyCard">
-                <span>
-                  📦
-                </span>
+                <span>📦</span>
 
                 <h3>
                   Bulk Enquiries
@@ -2316,10 +3071,11 @@ Please contact me with pricing and availability.`,
             </div>
 
           </div>
+
         </section>
 
         {/* ====================================================
-            HOW IT WORKS
+            PROCESS
             ==================================================== */}
 
         <section className="section processSection">
@@ -2382,13 +3138,15 @@ Please contact me with pricing and availability.`,
 
                 <p>
                   Finalize your material
-                  and delivery requirement.
+                  and delivery
+                  requirement.
                 </p>
               </div>
 
             </div>
 
           </div>
+
         </section>
 
         {/* ====================================================
@@ -2418,7 +3176,7 @@ Please contact me with pricing and availability.`,
               </div>
 
               <a
-                href={GOOGLE_REVIEW_URL}
+                href={getMapsURL()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="reviewButton"
@@ -2434,19 +3192,19 @@ Please contact me with pricing and availability.`,
             </div>
 
             <div className="reviewNotice">
+
               <span>
                 ★
               </span>
 
               <p>
-                Add your verified Google
-                customer reviews here.
-                Avoid publishing reviews
-                that are not genuine.
+                Genuine customer reviews
+                should be added here
+                after collecting them
+                from actual customers.
               </p>
-            </div>
 
-            {/* Replace these with actual reviews */}
+            </div>
 
             <div className="reviewsGrid">
 
@@ -2457,17 +3215,17 @@ Please contact me with pricing and availability.`,
                 </div>
 
                 <p>
-                  “Verified customer
-                  review can be added
-                  here.”
+                  Your verified Google
+                  review can be displayed
+                  here.
                 </p>
 
                 <strong>
-                  Your Customer Name
+                  Customer Review
                 </strong>
 
                 <small>
-                  Verified Customer
+                  Add genuine review
                 </small>
 
               </article>
@@ -2479,17 +3237,17 @@ Please contact me with pricing and availability.`,
                 </div>
 
                 <p>
-                  “Replace this text
-                  with your actual
-                  Google review.”
+                  Replace this section
+                  with genuine customer
+                  feedback.
                 </p>
 
                 <strong>
-                  Your Customer Name
+                  Customer Review
                 </strong>
 
                 <small>
-                  Verified Customer
+                  Add genuine review
                 </small>
 
               </article>
@@ -2501,17 +3259,17 @@ Please contact me with pricing and availability.`,
                 </div>
 
                 <p>
-                  “Only publish genuine
-                  customer feedback
-                  here.”
+                  Only publish reviews
+                  received from real
+                  customers.
                 </p>
 
                 <strong>
-                  Your Customer Name
+                  Customer Review
                 </strong>
 
                 <small>
-                  Verified Customer
+                  Add genuine review
                 </small>
 
               </article>
@@ -2519,6 +3277,7 @@ Please contact me with pricing and availability.`,
             </div>
 
           </div>
+
         </section>
 
         {/* ====================================================
@@ -2548,10 +3307,16 @@ Please contact me with pricing and availability.`,
             <div className="faqList">
 
               {faqs.map(
-                (faq, index) => (
+                (
+                  faq,
+                  index
+                ) => (
+
                   <div
                     className="faqItem"
-                    key={faq.q}
+                    key={
+                      faq.q
+                    }
                   >
 
                     <button
@@ -2591,12 +3356,14 @@ Please contact me with pricing and availability.`,
                     )}
 
                   </div>
+
                 )
               )}
 
             </div>
 
           </div>
+
         </section>
 
         {/* ====================================================
@@ -2643,7 +3410,9 @@ Please contact me with pricing and availability.`,
 
               <button
                 className="ctaCall"
-                onClick={makeCall}
+                onClick={
+                  makeCall
+                }
               >
                 📞 Call Now
               </button>
@@ -2651,10 +3420,11 @@ Please contact me with pricing and availability.`,
             </div>
 
           </div>
+
         </section>
 
         {/* ====================================================
-            QUOTATION BUILDER
+            QUOTATION
             ==================================================== */}
 
         <section
@@ -2697,8 +3467,7 @@ Please contact me with pricing and availability.`,
                 </div>
 
                 <div>
-                  ✓ Fast WhatsApp
-                  communication
+                  ✓ WhatsApp communication
                 </div>
 
               </div>
@@ -2710,13 +3479,17 @@ Please contact me with pricing and availability.`,
                 </span>
 
                 <div>
+
                   <strong>
                     Business Location
                   </strong>
 
                   <p>
-                    {BUSINESS_ADDRESS}
+                    {
+                      BUSINESS.address
+                    }
                   </p>
+
                 </div>
 
               </div>
@@ -2725,13 +3498,16 @@ Please contact me with pricing and availability.`,
 
             <form
               className="quoteForm"
-              onSubmit={submitQuote}
+              onSubmit={
+                submitQuote
+              }
             >
 
               <div className="formRow">
 
                 <label>
                   Your Name *
+
                   <input
                     required
                     value={
@@ -2740,7 +3516,9 @@ Please contact me with pricing and availability.`,
                     onChange={(e) =>
                       setQuote({
                         ...quote,
-                        name: e.target.value,
+                        name:
+                          e.target
+                            .value,
                       })
                     }
                     placeholder="Enter your name"
@@ -2749,10 +3527,11 @@ Please contact me with pricing and availability.`,
 
                 <label>
                   Phone Number *
+
                   <input
                     required
                     type="tel"
-                    inputMode="tel"
+                    inputMode="numeric"
                     value={
                       quote.phone
                     }
@@ -2760,10 +3539,11 @@ Please contact me with pricing and availability.`,
                       setQuote({
                         ...quote,
                         phone:
-                          e.target.value,
+                          e.target
+                            .value,
                       })
                     }
-                    placeholder="Enter phone number"
+                    placeholder="10-digit mobile number"
                   />
                 </label>
 
@@ -2773,6 +3553,7 @@ Please contact me with pricing and availability.`,
 
                 <label>
                   Email
+
                   <input
                     type="email"
                     value={
@@ -2782,7 +3563,8 @@ Please contact me with pricing and availability.`,
                       setQuote({
                         ...quote,
                         email:
-                          e.target.value,
+                          e.target
+                            .value,
                       })
                     }
                     placeholder="Email address"
@@ -2791,6 +3573,7 @@ Please contact me with pricing and availability.`,
 
                 <label>
                   Material
+
                   <select
                     value={
                       quote.material
@@ -2799,10 +3582,12 @@ Please contact me with pricing and availability.`,
                       setQuote({
                         ...quote,
                         material:
-                          e.target.value,
+                          e.target
+                            .value,
                       })
                     }
                   >
+
                     <option value="">
                       Select material
                     </option>
@@ -2827,7 +3612,9 @@ Please contact me with pricing and availability.`,
                     <option value="Other">
                       Other
                     </option>
+
                   </select>
+
                 </label>
 
               </div>
@@ -2836,6 +3623,7 @@ Please contact me with pricing and availability.`,
 
                 <label>
                   Quantity
+
                   <input
                     value={
                       quote.quantity
@@ -2844,7 +3632,8 @@ Please contact me with pricing and availability.`,
                       setQuote({
                         ...quote,
                         quantity:
-                          e.target.value,
+                          e.target
+                            .value,
                       })
                     }
                     placeholder="e.g. 500 Bags / 5 Ton"
@@ -2853,6 +3642,7 @@ Please contact me with pricing and availability.`,
 
                 <label>
                   Project Location
+
                   <input
                     value={
                       quote.location
@@ -2861,7 +3651,8 @@ Please contact me with pricing and availability.`,
                       setQuote({
                         ...quote,
                         location:
-                          e.target.value,
+                          e.target
+                            .value,
                       })
                     }
                     placeholder="Delivery location"
@@ -2882,10 +3673,11 @@ Please contact me with pricing and availability.`,
                     setQuote({
                       ...quote,
                       message:
-                        e.target.value,
+                        e.target
+                          .value,
                     })
                   }
-                  placeholder="Tell us about quantity, brand, delivery, project requirement..."
+                  placeholder="Tell us about quantity, brand, delivery and project requirement..."
                 />
 
               </label>
@@ -2895,15 +3687,20 @@ Please contact me with pricing and availability.`,
                 type="submit"
               >
                 💬 Send Enquiry on WhatsApp
+
                 <span>
                   ↗
                 </span>
               </button>
 
               {sent && (
-                <div className="successMessage">
-                  ✓ Enquiry prepared. WhatsApp
-                  will open with your quotation
+                <div
+                  className="successMessage"
+                  role="status"
+                >
+                  ✓ Enquiry prepared.
+                  WhatsApp will open
+                  with your quotation
                   request.
                 </div>
               )}
@@ -2911,6 +3708,7 @@ Please contact me with pricing and availability.`,
             </form>
 
           </div>
+
         </section>
 
         {/* ====================================================
@@ -2933,15 +3731,17 @@ Please contact me with pricing and availability.`,
                 </span>
 
                 <div>
+
                   <strong>
                     Address
                   </strong>
 
                   <p>
                     {
-                      BUSINESS_ADDRESS
+                      BUSINESS.address
                     }
                   </p>
+
                 </div>
 
               </div>
@@ -2953,17 +3753,19 @@ Please contact me with pricing and availability.`,
                 </span>
 
                 <div>
+
                   <strong>
                     Phone
                   </strong>
 
                   <a
-                    href={`tel:${BUSINESS_PHONE}`}
+                    href={`tel:${BUSINESS.phone}`}
                   >
                     {
-                      BUSINESS_PHONE
+                      BUSINESS.phone
                     }
                   </a>
+
                 </div>
 
               </div>
@@ -2975,17 +3777,19 @@ Please contact me with pricing and availability.`,
                 </span>
 
                 <div>
+
                   <strong>
                     Email
                   </strong>
 
                   <a
-                    href={`mailto:${BUSINESS_EMAIL}`}
+                    href={`mailto:${BUSINESS.email}`}
                   >
                     {
-                      BUSINESS_EMAIL
+                      BUSINESS.email
                     }
                   </a>
+
                 </div>
 
               </div>
@@ -2997,13 +3801,14 @@ Please contact me with pricing and availability.`,
               <button
                 onClick={() =>
                   copyText(
-                    BUSINESS_PHONE,
+                    BUSINESS.phone,
                     "phone"
                   )
                 }
               >
                 📋{" "}
-                {copied === "phone"
+                {copied ===
+                "phone"
                   ? "Copied!"
                   : "Copy Phone"}
               </button>
@@ -3011,19 +3816,22 @@ Please contact me with pricing and availability.`,
               <button
                 onClick={() =>
                   copyText(
-                    BUSINESS_EMAIL,
+                    BUSINESS.email,
                     "email"
                   )
                 }
               >
                 📋{" "}
-                {copied === "email"
+                {copied ===
+                "email"
                   ? "Copied!"
                   : "Copy Email"}
               </button>
 
               <button
-                onClick={makeCall}
+                onClick={
+                  makeCall
+                }
               >
                 📞 Call
               </button>
@@ -3052,52 +3860,41 @@ Please contact me with pricing and availability.`,
 
             <div className="mapWrapper">
 
-              {GOOGLE_MAPS_EMBED &&
-              GOOGLE_MAPS_EMBED !==
-                "your-google-maps-embed-url" ? (
-                <iframe
-                  src={
-                    GOOGLE_MAPS_EMBED
-                  }
-                  title={`${BUSINESS_NAME} Google Maps`}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  allowFullScreen
-                />
-              ) : (
-                <div className="mapPlaceholder">
+              <div className="mapPlaceholder">
 
-                  <div>
-                    <span>
-                      📍
-                    </span>
+                <div>
 
-                    <h3>
-                      Find Us in Pune
-                    </h3>
+                  <span>
+                    📍
+                  </span>
 
-                    <p>
-                      {
-                        BUSINESS_ADDRESS
-                      }
-                    </p>
+                  <h3>
+                    Find Us in Pune
+                  </h3>
 
-                    <button
-                      onClick={
-                        getDirections
-                      }
-                      className="primaryButton"
-                    >
-                      Open Google Maps →
-                    </button>
-                  </div>
+                  <p>
+                    {
+                      BUSINESS.address
+                    }
+                  </p>
+
+                  <button
+                    onClick={
+                      getDirections
+                    }
+                    className="primaryButton"
+                  >
+                    Open Google Maps →
+                  </button>
 
                 </div>
-              )}
+
+              </div>
 
             </div>
 
           </div>
+
         </section>
 
       </main>
@@ -3122,6 +3919,7 @@ Please contact me with pricing and availability.`,
               </span>
 
               <span className="brandText">
+
                 <strong>
                   श्री मंगल मूर्ती
                 </strong>
@@ -3129,6 +3927,7 @@ Please contact me with pricing and availability.`,
                 <small>
                   TRADERS
                 </small>
+
               </span>
 
             </a>
@@ -3142,7 +3941,7 @@ Please contact me with pricing and availability.`,
             <p className="footerAddress">
               📍{" "}
               {
-                BUSINESS_ADDRESS
+                BUSINESS.address
               }
             </p>
 
@@ -3196,7 +3995,7 @@ Please contact me with pricing and availability.`,
 
             <a
               href={
-                GOOGLE_MAPS_SEARCH_URL
+                getMapsURL()
               }
               target="_blank"
               rel="noopener noreferrer"
@@ -3213,20 +4012,20 @@ Please contact me with pricing and availability.`,
             </h4>
 
             <a
-              href={`tel:${BUSINESS_PHONE}`}
+              href={`tel:${BUSINESS.phone}`}
             >
               📞{" "}
               {
-                BUSINESS_PHONE
+                BUSINESS.phone
               }
             </a>
 
             <a
-              href={`mailto:${BUSINESS_EMAIL}`}
+              href={`mailto:${BUSINESS.email}`}
             >
               ✉️{" "}
               {
-                BUSINESS_EMAIL
+                BUSINESS.email
               }
             </a>
 
@@ -3247,7 +4046,8 @@ Please contact me with pricing and availability.`,
 
               <a
                 href={
-                  SOCIAL_LINKS.facebook
+                  BUSINESS.social
+                    .facebook
                 }
                 target="_blank"
                 rel="noopener noreferrer"
@@ -3258,7 +4058,8 @@ Please contact me with pricing and availability.`,
 
               <a
                 href={
-                  SOCIAL_LINKS.instagram
+                  BUSINESS.social
+                    .instagram
                 }
                 target="_blank"
                 rel="noopener noreferrer"
@@ -3269,7 +4070,8 @@ Please contact me with pricing and availability.`,
 
               <a
                 href={
-                  SOCIAL_LINKS.linkedin
+                  BUSINESS.social
+                    .linkedin
                 }
                 target="_blank"
                 rel="noopener noreferrer"
@@ -3280,7 +4082,8 @@ Please contact me with pricing and availability.`,
 
               <a
                 href={
-                  SOCIAL_LINKS.whatsapp
+                  BUSINESS.social
+                    .whatsapp
                 }
                 target="_blank"
                 rel="noopener noreferrer"
@@ -3302,13 +4105,15 @@ Please contact me with pricing and availability.`,
             <span>
               ©{" "}
               {new Date().getFullYear()}{" "}
-              {BUSINESS_NAME}.
+              {
+                BUSINESS.name
+              }.
               All rights reserved.
             </span>
 
             <span>
-              Built for better
-              business enquiries.
+              Building material
+              enquiries made simple.
             </span>
 
           </div>
@@ -3378,6 +4183,7 @@ Please contact me with pricing and availability.`,
               <div className="modalInfoGrid">
 
                 <div>
+
                   <span>
                     Availability
                   </span>
@@ -3387,9 +4193,11 @@ Please contact me with pricing and availability.`,
                       selectedProduct.availability
                     }
                   </strong>
+
                 </div>
 
                 <div>
+
                   <span>
                     Unit
                   </span>
@@ -3399,6 +4207,7 @@ Please contact me with pricing and availability.`,
                       selectedProduct.unit
                     }
                   </strong>
+
                 </div>
 
               </div>
@@ -3451,9 +4260,21 @@ Please contact me with pricing and availability.`,
                   📦 Add to Bulk
                 </button>
 
+                <button
+                  className="outlineButton"
+                  onClick={() =>
+                    enquireProduct(
+                      selectedProduct
+                    )
+                  }
+                >
+                  🧾 Enquire
+                </button>
+
               </div>
 
             </div>
+
           </div>
         )}
 
@@ -3465,7 +4286,9 @@ Please contact me with pricing and availability.`,
         <div
           className="modalOverlay"
           onClick={() =>
-            setBulkModal(false)
+            setBulkModal(
+              false
+            )
           }
         >
 
@@ -3479,7 +4302,9 @@ Please contact me with pricing and availability.`,
             <button
               className="modalClose"
               onClick={() =>
-                setBulkModal(false)
+                setBulkModal(
+                  false
+                )
               }
               aria-label="Close bulk quote"
             >
@@ -3501,6 +4326,7 @@ Please contact me with pricing and availability.`,
 
             {bulkItems.length ===
             0 ? (
+
               <div className="emptyBulk">
 
                 <span>
@@ -3532,15 +4358,21 @@ Please contact me with pricing and availability.`,
                 </button>
 
               </div>
+
             ) : (
+
               <>
+
                 <div className="bulkList">
 
                   {bulkItems.map(
                     (item) => (
+
                       <div
                         className="bulkRow"
-                        key={item.id}
+                        key={
+                          item.id
+                        }
                       >
 
                         <div className="bulkProduct">
@@ -3552,6 +4384,7 @@ Please contact me with pricing and availability.`,
                           </span>
 
                           <div>
+
                             <strong>
                               {
                                 item.title
@@ -3563,6 +4396,7 @@ Please contact me with pricing and availability.`,
                                 item.unit
                               }
                             </small>
+
                           </div>
 
                         </div>
@@ -3572,10 +4406,13 @@ Please contact me with pricing and availability.`,
                           <input
                             type="number"
                             min="1"
+                            step="1"
                             value={
                               item.quantity
                             }
-                            onChange={(e) =>
+                            onChange={(
+                              e
+                            ) =>
                               updateBulkQty(
                                 item.id,
                                 e.target
@@ -3605,6 +4442,7 @@ Please contact me with pricing and availability.`,
                         </button>
 
                       </div>
+
                     )
                   )}
 
@@ -3614,6 +4452,7 @@ Please contact me with pricing and availability.`,
 
                   <label>
                     Name
+
                     <input
                       value={
                         quote.name
@@ -3632,7 +4471,9 @@ Please contact me with pricing and availability.`,
 
                   <label>
                     Phone
+
                     <input
+                      inputMode="numeric"
                       value={
                         quote.phone
                       }
@@ -3644,12 +4485,13 @@ Please contact me with pricing and availability.`,
                               .value,
                         })
                       }
-                      placeholder="Phone number"
+                      placeholder="10-digit mobile number"
                     />
                   </label>
 
                   <label>
                     Delivery Location
+
                     <input
                       value={
                         quote.location
@@ -3672,10 +4514,8 @@ Please contact me with pricing and availability.`,
 
                   <button
                     className="clearBulkButton"
-                    onClick={() =>
-                      setBulkItems(
-                        []
-                      )
+                    onClick={
+                      clearBulk
                     }
                   >
                     Clear All
@@ -3693,6 +4533,7 @@ Please contact me with pricing and availability.`,
                 </div>
 
               </>
+
             )}
 
           </div>
@@ -3728,6 +4569,7 @@ Please contact me with pricing and availability.`,
                   null
                 )
               }
+              aria-label="Close image"
             >
               ✕
             </button>
@@ -3739,15 +4581,30 @@ Please contact me with pricing and availability.`,
               alt={
                 galleryImage.alt
               }
-              onError={(e) => {
-                e.currentTarget.style.display =
+              onError={(
+                event
+              ) => {
+                event.currentTarget.style.display =
                   "none";
-                e.currentTarget.nextElementSibling.style.display =
-                  "flex";
+
+                const fallback =
+                  event.currentTarget.parentElement?.querySelector(
+                    ".lightboxFallback"
+                  );
+
+                if (fallback) {
+                  fallback.style.display =
+                    "flex";
+                }
               }}
             />
 
-            <div className="lightboxFallback">
+            <div
+              className="lightboxFallback"
+              style={{
+                display: "none",
+              }}
+            >
               {
                 galleryImage.emoji
               }
@@ -3781,7 +4638,7 @@ Please contact me with pricing and availability.`,
       >
 
         <span className="waIcon">
-          ☎
+          💬
         </span>
 
         <span className="waText">
@@ -3811,9 +4668,11 @@ Please contact me with pricing and availability.`,
         }
       >
         ✦
+
         <span>
           Quote
         </span>
+
       </a>
 
       {/* ======================================================
@@ -3823,10 +4682,13 @@ Please contact me with pricing and availability.`,
       <div className="mobileStickyBar">
 
         <button
-          onClick={makeCall}
+          onClick={
+            makeCall
+          }
           aria-label="Call"
         >
           📞
+
           <span>
             Call
           </span>
@@ -3843,6 +4705,7 @@ Please contact me with pricing and availability.`,
           aria-label="WhatsApp"
         >
           💬
+
           <span>
             WhatsApp
           </span>
@@ -3857,6 +4720,7 @@ Please contact me with pricing and availability.`,
           }
         >
           🧾
+
           <span>
             Quote
           </span>
@@ -3869,6 +4733,7 @@ Please contact me with pricing and availability.`,
           aria-label="Directions"
         >
           📍
+
           <span>
             Map
           </span>
@@ -3886,7 +4751,8 @@ Please contact me with pricing and availability.`,
           onClick={() =>
             window.scrollTo({
               top: 0,
-              behavior: "smooth",
+              behavior:
+                "smooth",
             })
           }
           aria-label="Scroll to top"
@@ -3903,8 +4769,21 @@ Please contact me with pricing and availability.`,
    RENDER
    ============================================================ */
 
+const rootElement =
+  document.getElementById(
+    "root"
+  );
+
+if (!rootElement) {
+  throw new Error(
+    "Root element #root was not found."
+  );
+}
+
 createRoot(
-  document.getElementById("root")
+  rootElement
 ).render(
-  <App />
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
 );
